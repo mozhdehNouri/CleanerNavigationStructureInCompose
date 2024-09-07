@@ -27,7 +27,8 @@ fun NavGraphBuilder.safeScreenInitial(
     }
 }
 
-// a helper class for navigate safe between screens with parameters
+// A helper function for safe navigation between screens with optional parameters.
+// It handles passing arguments, pop-up behavior, and screen inclusion in the back stack.
 fun NavController.safeNavigate(
     destinationScreen: String,
     popUpTo: String? = null,
