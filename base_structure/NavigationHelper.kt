@@ -9,7 +9,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 
-// a General class for for customize item
+// A custom function for safely initializing a composable screen in a NavGraph.
+// It supports arguments, deep links, and customizable route generation.
 fun NavGraphBuilder.safeScreenInitial(
     route: String,
     arguments: List<NamedNavArgument> = emptyList(),
@@ -49,7 +50,8 @@ fun NavController.safeNavigate(
 }
 
 
-// a helper class for navigate safe between screens with parameters
+// A helper function for safe navigation between screens with optional parameters.
+// It handles passing arguments, pop-up behavior, and screen inclusion in the back stack.
 fun NavController.safeNavigate(
     destinationScreen: String,
     navOptions: NavOptions?=null,
@@ -62,8 +64,8 @@ fun NavController.safeNavigate(
     }
 }
 
-
-// use this function for passing your parameter and we use it in navigate
+// A helper function for constructing a navigation route with arguments.
+// It appends each argument to the base route for use in safe navigation.
 fun passArgument(router: String, args: List<Any>): String {
     return buildString {
         append(router)
@@ -73,7 +75,8 @@ fun passArgument(router: String, args: List<Any>): String {
     }
 }
 
-// use this function for get your parameter and we use it in our screens
+// A helper function for generating a route with placeholders for arguments.
+// It formats the route with argument keys to retrieve them in the destination screen.
 fun getArgument(router: String, value: List<String>?): String {
     return buildString {
         append(router)
