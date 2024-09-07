@@ -1,0 +1,7 @@
+const val moduleName = "Favorite_module"
+
+sealed class FavoriteRoutes(val router: String) {
+    data object UnfavoriteScreen : FavoriteRoutes(router = "$moduleName://unfavoriteScreen")
+    data object SearchScreen : FavoriteRoutes(router = "$moduleName://searchScreen")
+    data object DeleteScreen : FavoriteRoutes(router = "$moduleName://deleteScreen")
+}
